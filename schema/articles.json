@@ -1,0 +1,26 @@
+{
+  "userId": "string",
+  "articles": [
+    {
+      "title": "string",
+      "authors": [{ "name": "string", "organization": "string" }],
+      "private": "boolean",
+      "publishedAt": "dateTime",
+      "acquiredAt": "dateTime",
+      "type": "string",
+      "tags": "[]string",
+      "metrics": {
+        "upvotes": "int",
+        "downVotes": "int",
+        "views": "int"
+      },
+      "publication": {
+        "name": "string",
+        "volume": "int",
+        "issue": "int",
+        "issn": "int",
+        "doi": "int"
+      }
+    }
+  ]
+}

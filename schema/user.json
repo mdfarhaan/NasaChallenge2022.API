@@ -1,0 +1,10 @@
+{
+  "userId": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "role": "string",
+  "organization": "string",
+  "domain": "string",
+  "follwing": "[]string"
+}

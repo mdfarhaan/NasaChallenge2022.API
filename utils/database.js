@@ -17,7 +17,7 @@ const connectDb = (callback) => {
     });
 };
 
-const db = () => {
+const getdb = () => {
   if (_db) {
     return _db;
   }
@@ -25,4 +25,4 @@ const db = () => {
 };
 
 exports.connectDb = connectDb;
-exports.db = db;
+exports.getdb = getdb;

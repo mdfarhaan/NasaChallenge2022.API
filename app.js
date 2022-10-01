@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const { config } = require("./utils/config");
 const { connectDb } = require("./utils/database.js");
 
-const Api = require("./src/api");
+const Api = require("./api");
 
 app.use(bodyParser.json());
 app.use(
@@ -21,7 +21,7 @@ app.use(morgan("dev"));
 app.use("/api", Api);
 
 connectDb(() => {
-  app.listen(PORT, () => {
+  app.listen(config.PORT, () => {
     console.log(`server running on port: ${config.PORT}`);
   });
 });
