@@ -1,5 +1,5 @@
 const { getdb } = require("../../utils/database");
-const { generateUserId } = require("./service");
+const { generateUserId } = require("../../utils/helpers");
 
 exports.getUser = async (req, res) => {
   const db = await getdb();

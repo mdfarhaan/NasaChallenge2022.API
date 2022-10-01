@@ -1,7 +1,9 @@
 require("dotenv").config();
 
 exports.config = {
-  DB_URI:
-    "mongodb+srv://admin:BZdRl49ho0y7wL5R@primary.trzovmn.mongodb.net/nasa_challenge_2022?retryWrites=true&w=majority",
+  DB_URI: process.env.DB_URI,
   PORT: 8000,
+  S3AccessKey: process.env.S3AccessKey,
+  S3SecretAccessKey: process.env.S3SecretAccessKey,
+  S3Bucket: process.env.S3Bucket,
 };
