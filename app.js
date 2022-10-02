@@ -21,6 +21,10 @@ app.use(morgan("dev"));
 app.use(fileUpload());
 app.use("/api", Api);
 
+app.use("*", (req, res) => {
+  res.status(200).json({ message: "NASA Challenge 2022" });
+});
+
 connectDb(() => {
   app.listen(config.PORT, () => {
     console.log(`server running on port: ${config.PORT}`);
