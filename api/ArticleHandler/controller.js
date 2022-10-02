@@ -17,7 +17,11 @@ exports.getArticle = async (req, res) => {
 
 exports.getAllArticle = async (req, res) => {
   const db = await getdb();
-  const data = await db.collection("articles").find().sort({ publishedAt: -1 });
+  const data = await db
+    .collection("articles")
+    .find()
+    .sort({ publishedAt: -1 })
+    .toArray();
   if (data) {
     res.status(200).json({ success: true, data });
   }
@@ -32,7 +36,7 @@ exports.addArticle = async (req, res) => {
     Bucket: config.S3Bucket,
     Key: `${generateUserId()}.pdf`,
     Body: file.data,
-    contentType: "application/pdf",
+    ContentType: "application/pdf",
   };
 
   const fileUpload = await S3.upload(params).promise();
