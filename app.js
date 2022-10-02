@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const { config } = require("./utils/config");
 const { connectDb } = require("./utils/database.js");
+const fileUpload = require("express-fileupload");
 
 const Api = require("./api");
 
@@ -17,7 +18,7 @@ app.use(
 );
 app.use(express.json());
 app.use(morgan("dev"));
-
+app.use(fileUpload());
 app.use("/api", Api);
 
 connectDb(() => {
